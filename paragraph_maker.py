@@ -10,19 +10,20 @@ symbols=["?!."]
 def create_paragraph(sentences):
     paragraph = []
     for _ in range(sentences):
-        sentence = []
-        length = random.randint(0,10)
-        word_amount = random.randint(0, 7)
+        s = []
+        length = random.randint(3,10)
+        word_amount = random.randint(4, 10)
         word = "".join(random.choices(string.ascii_letters + string.digits, k=length))
         for _ in range(word_amount):
-            sentence.append(word + " ")
+            s.append(word + " ")
 
-        ending = random.choice(symbols)
-        sentence.append(ending)
+        ending = random.choice(symbols) # TODO Fix this
+        s.append(ending)
+        x = "".join(s)
+        paragraph.append(x)
 
-        paragraph.append(sentence)
-        
-    return paragraph
+    p = ' '.join(paragraph)
+    return p
 
 print(create_paragraph(9))
 

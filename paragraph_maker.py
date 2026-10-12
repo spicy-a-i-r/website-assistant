@@ -1,29 +1,32 @@
 # for making nonsense paragraphs
 
-# DOESNT WORK
-
 import random
-import string
 
-symbols=["?!."]
+lower = ["abcdefghijklmnoqrstuwxyz"]
+symbols = ["? ", "! ", ". "]
+
+
 
 def create_paragraph(sentences):
-    paragraph = []
-    for _ in range(sentences):
+    p = []
+    for i in range(1, sentences): # makes a sentence
         s = []
-        length = random.randint(3,10)
-        word_amount = random.randint(4, 10)
-        word = "".join(random.choices(string.ascii_letters + string.digits, k=length))
-        for _ in range(word_amount):
-            s.append(word + " ")
+        w = random.randint(1, 9)
 
-        ending = random.choice(symbols) # TODO Fix this
-        s.append(ending)
-        x = "".join(s)
-        paragraph.append(x)
+        for _ in range(1, w): # makes a word
+            word = []
+            l = random.randint(1, 11)
 
-    p = ' '.join(paragraph)
-    return p
+            for _ in range(1, l):
+                char = lower[random.randint(1, l)]
+                word.append(char)
+            word.append(random.choice(symbols))
+            "".join(word)
+            print(word)
 
-print(create_paragraph(9))
+        s.append(word)
+        print(s)
+
+create_paragraph(4)
+        
 

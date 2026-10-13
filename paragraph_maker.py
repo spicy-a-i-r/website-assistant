@@ -2,31 +2,31 @@
 
 import random
 
-lower = ["abcdefghijklmnoqrstuwxyz"]
+lower = "abcdefghijklmnoqrstuwxyz"
 symbols = ["? ", "! ", ". "]
 
+p = []
+
+def create(s):
+    low = list(lower)
+    random.shuffle(low)
+
+    
+
+    for _ in range(s):
+        sen = []
+        l = random.randint(3, 11)
+        a = random.choices(low, k=l)
+        sentence = "".join("".join(a) for a in sen)
+        print(sentence)
+        sym = random.choice(symbols)
+        sen.append(sym + " ")
+        p.append(sen)
 
 
-def create_paragraph(sentences):
-    p = []
-    for i in range(1, sentences): # makes a sentence
-        s = []
-        w = random.randint(1, 9)
 
-        for _ in range(1, w): # makes a word
-            word = []
-            l = random.randint(1, 11)
+create(9)
 
-            for _ in range(1, l):
-                char = lower[random.randint(1, l)]
-                word.append(char)
-            word.append(random.choice(symbols))
-            "".join(word)
-            print(word)
 
-        s.append(word)
-        print(s)
-
-create_paragraph(4)
         
 
